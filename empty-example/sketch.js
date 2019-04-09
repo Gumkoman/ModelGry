@@ -14,6 +14,7 @@ function setup() {
 function draw() {
   background(237, 34, 93);
   enemy.show();
+  enemy.checkCollision();
   crosshair.show();
   crosshair.updateMouse();
 }
@@ -47,7 +48,18 @@ function Enemy(){
     this.y = Math.random()*windowSizeY;
   }
   this.checkCollision=function(){
-
+    var tempR;
+    //tempR=Math.sqrt((mouseX-this.x)^2+(mouseY-this.y)^2)
+    //console.log("MouseX: "+mouseX);
+    //console.log("MouseY: "+mouseY);
+    //console.log(this.x);
+    //console.log(this.y);
+    tempR=Math.sqrt(Math.pow(mouseX-this.x,2)+Math.pow(mouseY-this.y,2));
+    console.log(tempR);
+    if ((tempR<this.r)&&(mouseIsPressed)){
+        console.log(windowSizeY);
+      this.changePosition();
+    }
   }
 
 }
