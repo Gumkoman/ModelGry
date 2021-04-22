@@ -7,7 +7,7 @@ var key;
 var score;
 function setup() {
   windowSizeX=1880;
-  windowSizeY=1040;
+  windowSizeY=1000;
   key=5;
   enemy = new Enemy;
   crosshair = new Crosshair;
